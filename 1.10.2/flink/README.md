@@ -5,6 +5,35 @@ Apache Flink is an open source stream processing framework with powerful stream-
 Learn more about Flink at [https://flink.apache.org/](https://flink.apache.org/)
 
 
+```shell
+### jdk1.8下载 https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html
+$ git clone https://github.com/apache/flink.git
+$ cat ~/.bash_profile
+alias tailf='tail -f'
+export M3_HOME=/Users/pingyan/dt/tool/maven/apache-maven-3.6.3
+export PATH=$M3_HOME/bin:$PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+$ source ~/.bash_profile
+$ java -version
+java version "1.8.0_131"
+Java(TM) SE Runtime Environment (build 1.8.0_131-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.131-b11, mixed mode)
+$ git checkout release-1.10.2
+### 68bb8b6129
+### 非必须: $ export ALL_PROXY=http://127.0.0.1:1087
+$ mvn clean package -DskipTests -Dhadoop.version=2.7.5
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  17:19 min
+[INFO] Finished at: 2020-11-27T18:17:20+08:00
+[INFO] ------------------------------------------------------------------------
+
+```
+
+
+
 ### Features
 
 * A streaming-first runtime that supports both batch processing and data streaming programs
